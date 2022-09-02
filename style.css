@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+*{
+    border: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    text-transform: none;
+    list-style: none;
+    font-family: 'Overpass', sans-serif;
+}
+
+:root{
+    --Orange: hsl(25, 97%, 53%);
+    --White: hsl(0, 0%, 100%);
+    --Light-Grey: hsl(217, 12%, 63%);
+    --Light-Grey-2: hsla(217, 12%, 63%, 0.15);
+    --Medium-Grey: hsl(216, 12%, 54%);
+    --Dark-Blue: hsl(213, 19%, 18%);
+    --Very-Dark-Blue: hsl(216, 12%, 8%);
+}
+
+main{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--Very-Dark-Blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-front, .card-back{
+    background-color: var(--Dark-Blue);
+    position: fixed;
+    width: 320px;
+    height: 320px;
+    padding: 0 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.star{
+    width: 45px;
+    height: 45px;
+    background-color: var(--Light-Grey-2);
+    box-shadow: 0 0 0.625rem rgb(0 0 0 / 20%);
+    border-radius: 50px;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.star img{
+    width: 35%;
+}
+
+.info h1{
+    font-size: 22px;
+    color: var(--White);
+    font-weight: 700;
+}
+
+.info p{
+    font-size: 15px;
+    color: var(--Light-Grey);
+    font-weight: 400;
+}
+
+.lista{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.lista li{
+    width: 45px;
+    height: 45px;
+    box-shadow: 0 0 0.625rem rgb(0 0 0 / 20%);
+    background-color: var(--Light-Grey-2);
+    color: var(--Light-Grey);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.lista li:hover{
+    background-color: var(--Light-Grey);
+    color: var(--White);
+}
+
+.btn-ativo{
+    background-color: var(--Orange) !important;
+    color: var(--White) !important;
+}
+
+.btn{
+    background-color: var(--Orange);
+    color: var(--White);
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 25px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.btn:hover{
+    background-color: var(--White);
+    color: var(--Orange);
+}
+
+/* Back */
+
+.card-back{
+    position: absolute;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+}
+
+.card-back-ativo{
+    z-index: 2;
+}
+
+.card-back img{
+    width: 40%;
+}
+
+.card-back .paragrafo{
+    background-color: var(--Light-Grey-2);
+    color: var(--Orange);
+    font-size: 16px;
+    font-weight: 400;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.card-back h1{
+    color: var(--White);
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.card-back p{
+    color: var(--Light-Grey);
+    font-size: 14px;
+    text-align: center;
+}
+
+@media (max-width: 380px) {
+    .card-front, .card-back{
+        width: 280px;
+        height: 280px;
+    }
+}
